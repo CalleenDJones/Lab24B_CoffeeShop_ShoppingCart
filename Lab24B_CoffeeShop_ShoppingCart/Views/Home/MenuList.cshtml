@@ -1,0 +1,112 @@
+﻿@using Lab24B_CoffeeShop_ShoppingCart.Models;
+
+@{
+    ViewBag.Title = "MenuList";
+}
+
+<h2>Menu List</h2>
+
+@*
+    @foreach (var item in ViewBag.Items)
+    {
+        @item
+    }
+
+    @item
+*@
+
+<table class="table table-bordered">
+    
+        @*Added Table Row Headers*@
+        @*<th>Item ID</th>
+        <th>Item Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Quantity</th>
+    </tr>*@
+
+    <tr>
+        <th><a href="~/Home/MenuListSorted?column=ItemID">Item ID</a></th>
+        <th><a href="~/Home/MenuListSorted?column=ItemName">Item Name</th>
+        <th><a href="~/Home/MenuListSorted?column=Description">Description</th>
+        <th><a href="~/Home/MenuListSorted?column=Price">Price</th>
+        <th><a href="~/Home/MenuListSorted?column=Quantity">Quantity</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (Item item in ViewBag.Items)
+    {
+        <tr>
+            <td>@item.ItemID</td>
+            <td>@item.ItemName</td>
+            <td>@item.Description</td>
+            <td>$ @item.Price.00</td>
+            <td>@item.Quantity</td>
+            <td><a href="~/Home/Add?id=@item.ItemID" class="btn btn-primary">Add to Bag</a></td>
+        </tr>
+
+        @*<tr>
+                <td><a href="~/Home/Add?id=@item.ItemID"></a></td>
+                <td><a href="~/Home/Add?id=@item.ItemName"></a></td>
+                <td><a href="~/Home/Add?id=@item.Description"></a></td>
+                <td><a href="~/Home/Add?id=>@item.Price"></a></td>
+                <td><a href="~/Home/Add?id=@item.Quantity"></a></td>
+            </tr>*@
+    }
+</table>
+<br />
+      <h3><a href="~/Home/MenuList">Back to List</a></h3>
+<br />
+
+<form action="~/Home/MenuListbyID" method="get">
+    <label>
+        Search by Item ID:
+        <select name="itemID">
+            @foreach (Item item in ViewBag.Items)
+            {
+                <option value="@item.ItemID">
+                    @item.ItemID
+                </option>
+            }
+        </select>
+        @*<input type="number" name="itemID" class="form-control" />*@
+    </label>
+    <input type="submit" value="Search" class="btn btn-primary" />
+</form>
+<br />
+
+<form action="~/Home/MenuListbyItemName" method="get">
+    <label>
+        Search by Item Name:
+        <input type="text" name="itemName" class="form-control" />
+    </label>
+    <input type="submit" value="Search" class="btn btn-primary" />
+</form>
+<br />
+
+<form action="~/Home/MenuListbyDescription" method="get">
+    <label>
+        Search by Description:
+        <input type="text" name="description" class="form-control" />
+    </label>
+    <input type="submit" value="Search" class="btn btn-primary" />
+</form>
+<br />
+
+<form action="~/Home/MenuListbyPrice" method="get">
+    <label>
+        Search by Price:
+        <input type="number" name="price" class="form-control" />
+    </label>
+    <input type="submit" value="Search" class="btn btn-primary" />
+</form>
+<br />
+
+<form action="~/Home/MenuListbyQuantity" method="get">
+    <label>
+        Search by Quantity:
+        <input type="number" name="quantity" class="form-control" />
+    </label>
+    <input type="submit" value="Search" class="btn btn-primary" />
+</form>
+<br />

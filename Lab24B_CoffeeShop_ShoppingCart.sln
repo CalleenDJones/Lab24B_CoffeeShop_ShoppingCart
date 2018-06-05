@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab24B_CoffeeShop_ShoppingCart", "Lab24B_CoffeeShop_ShoppingCart\Lab24B_CoffeeShop_ShoppingCart.csproj", "{FFE4E450-9F07-4159-89C4-960337158A61}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8235EE57-9011-4D2A-8CB6-8A43776C2580}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FFE4E450-9F07-4159-89C4-960337158A61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFE4E450-9F07-4159-89C4-960337158A61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFE4E450-9F07-4159-89C4-960337158A61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFE4E450-9F07-4159-89C4-960337158A61}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4709CAE5-AFBD-4C9C-946F-94CFC6B34064}
+	EndGlobalSection
+EndGlobal
