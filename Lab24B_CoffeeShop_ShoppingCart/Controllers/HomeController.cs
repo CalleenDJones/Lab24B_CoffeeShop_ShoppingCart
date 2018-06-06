@@ -100,41 +100,42 @@ namespace Lab24B_CoffeeShop_ShoppingCart.Controllers
             return View("MenuList");
         }
 
-        //public ActionResult MenuListSorted(string column)
-        //{
-        //    CoffeeShopDBEntities ORM = new CoffeeShopDBEntities();
-        //    if (column == "ItemName")
-        //    {
-        //        List<Item> items = (from item in ORM.items
-        //                            orderby item.ItemName
-        //                            select item).ToList();
-        //    }
+        public ActionResult MenuListSorted(string column)
+        {
+            CoffeeShopDBEntities ORM = new CoffeeShopDBEntities();
+            if (column == "ItemName")
+            {
+                ViewBag.Items = (from item in ORM.items
+                                    orderby item.ItemName
+                                    select item).ToList();
+            }
 
-        //    else if (column == "Description")
-        //    {
-        //        List<Item> items = (from item in ORM.items
-        //                            orderby item.Description
-        //                            select item).ToList();
-        //    }
+            else if (column == "Description")
+            {
+                ViewBag.Items = (from item in ORM.items
+                                    orderby item.Description
+                                    select item).ToList();
+            }
 
-        //    else if (column == "Price")
-        //    {
-        //        List<Item> items = (from item in ORM.items
-        //                            orderby item.Price
-        //                            select item).ToList();
-        //    }
-        //    else if (column == "Quantity")
-        //    {
-        //        List<Item> items = (from item in ORM.items
-        //                            orderby item.Quantity
-        //                            select item).ToList();
-        //    }
-        //    else
-        //    {
-        //        ViewBag.ItemID = ORM.items.ToList();
-        //        return View("MenuList");
-        //    }
-        //}
+            else if (column == "Price")
+            {
+                ViewBag.Items = (from item in ORM.items
+                                    orderby item.Price
+                                    select item).ToList();
+            }
+            else if (column == "Quantity")
+            {
+                 ViewBag.Items = (from item in ORM.items
+                                    orderby item.Quantity
+                                    select item).ToList();
+            }
+            else
+            {
+                ViewBag.ItemID = ORM.items.ToList();
+               
+            }
+            return View("MenuList");
+        }
 
         public ActionResult Add(int id)
         {
